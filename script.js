@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeButtons = document.getElementById('mode');
     const pvpButton = document.getElementById('pvp');
     const pvcButton = document.getElementById('pvc');
-    const musicButton = document.getElementById('music');
+    const musicButton = document.getElementById('music1');
+    const changeImageButton = document.getElementById('music1');
     const backgroundMusic = document.getElementById('background-music');
     const gameElement = document.getElementById('game');
     
@@ -103,6 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
             musicButton.textContent = 'Play Music';
         }
     }
+    function changeImage() {
+        if (document.getElementById("music1").src == "https://cdn2.iconfinder.com/data/icons/picol-vector/32/music_pause-128.png"){
+            document.getElementById("music1").src = "https://cdn2.iconfinder.com/data/icons/picol-vector/32/music_stop-128.png";
+        } else {
+            document.getElementById("music1").src = "https://cdn2.iconfinder.com/data/icons/picol-vector/32/music_pause-128.png";
+        }
+    }
 
     cells.forEach(cell => cell.addEventListener('click', handleCellClick));
     resetButton.addEventListener('click', resetGame);
@@ -110,5 +118,5 @@ document.addEventListener('DOMContentLoaded', () => {
     pvpButton.addEventListener('click', () => startGame(true));
     pvcButton.addEventListener('click', () => startGame(false));
     musicButton.addEventListener('click', toggleMusic);
-
+    changeImageButton.addEventListener('click',changeImage);
 });
